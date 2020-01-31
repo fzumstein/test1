@@ -21,6 +21,10 @@ jobs:
       - name: Runs on pushes but not on releases
         if: github.event_name != 'release'
         run: echo 'test'
+      - name: Runs always
+        run: |
+          echo ${{ GITHUB_REF }}
+          echo ${{ GITHUB_SHA }}
       - name: Upload Release Asset
         if: github.event_name == 'release'
         id: upload-release-asset 
