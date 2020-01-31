@@ -22,6 +22,7 @@ jobs:
         if: github.event_name != 'release'
         run: echo 'test'
       - name: Runs always
+        shell: bash
         run: |
           echo $GITHUB_REF
           echo $GITHUB_SHA
