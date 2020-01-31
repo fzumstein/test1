@@ -1,14 +1,16 @@
 name: Upload Release Asset
 
 on:
-  release:
-    types:
-      - created
+  - push
+  - release:
+      types:
+        - created
 
 
 jobs:
   build:
     name: Upload Release Asset
+    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
     runs-on: windows-latest
     steps:
       - name: Checkout code
