@@ -1,11 +1,10 @@
 on:
-    release:
-        types:
-          - created
+   release:
+     types:
+       - created
 
-  
   name: Upload Release Asset
-  
+
   jobs:
     build:
       name: Upload Release Asset
