@@ -19,6 +19,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@master
       - name: Runs on pushes but not on releases
+        if: github.event_name != 'release'
         run: echo 'test'
       - name: Upload Release Asset
         if: github.event_name == 'release'
