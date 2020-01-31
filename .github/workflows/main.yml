@@ -10,7 +10,7 @@ on:
 jobs:
   build:
     name: Upload Release Asset
-    if: github.event_name == 'push' && startsWith(github.event.ref, 'refs/tags')
+    if: github.event_name == 'release'
     runs-on: windows-latest
     steps:
       - name: Checkout code
